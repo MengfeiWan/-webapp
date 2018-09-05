@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import storeList from './storeList.less';
+import './storeList.less';
 
 const list = [
   {
@@ -57,19 +57,19 @@ class StoreList extends React.Component {
   render() {
     return (
       <div>
-      <ul >
+      <ul  className="commend-list">
         {list.length ? list.map(
           (item, index) => (
             <Link to={`detail/${item.id}`} key={index} >
-              <li>
-                <div>
-                  <img src={item.img} alt="图片"/>
-                </div>
-                <div>
-                  <p><span>{item.title}</span></p>
-                  <p><span>￥{item.price}</span></p>
-                </div>
-              </li>
+               <li>
+              <div className="goods-img">
+                <img src={item.img} alt="图片"/>
+              </div>
+              <div className="goods-infor">
+                <p><span className="title">{item.title}</span><span className="distance">{item.distance}</span></p>
+                <p><span className="price">￥{item.price}</span><span className="sold">已售:{item.number}</span></p>
+              </div>
+            </li>
             </Link>
           )
         ) : '加载中...'}
