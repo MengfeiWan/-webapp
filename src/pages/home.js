@@ -15,6 +15,12 @@ class Home extends React.Component {
     console.log(StoreList);
     return (
       <div>
+        {/* <Search
+              placeholder="input search text"
+              onSearch={value => console.log(value)}
+              // style={{ width: '90%' }}
+            />
+            <StoreList /> */}
         <Layout>
           <Header>
             <Search

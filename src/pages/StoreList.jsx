@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './storeList.less';
 
-const list = [
+let list = [
   {
       img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016201638030-473660627.png',
       title: '汉堡大大',
@@ -49,6 +49,11 @@ const list = [
       id: Math.random().toString().slice(2)
   }
 ]
+let lists=[];
+for(let j=0;j<5;j++) {
+  lists=lists.concat(list,lists)
+}
+console.log(lists);
 class StoreList extends React.Component {
   constructor(props) {
     super(props);
@@ -58,7 +63,7 @@ class StoreList extends React.Component {
     return (
       <div>
       <ul  className="commend-list">
-        {list.length ? list.map(
+        {lists.length ? lists.map(
           (item, index) => (
             <Link to={`detail/${item.id}`} key={index} >
                <li>
@@ -67,6 +72,7 @@ class StoreList extends React.Component {
               </div>
               <div className="goods-infor">
                 <p><span className="title">{item.title}</span><span className="distance">{item.distance}</span></p>
+                <p>{this.sliceString(item.subTitle)}</p>
                 <p><span className="price">￥{item.price}</span><span className="sold">已售:{item.number}</span></p>
               </div>
             </li>
@@ -77,6 +83,9 @@ class StoreList extends React.Component {
       </div>
     );
   } 
+  sliceString = (string) => {
+    return  string.length < 12 ? string : `${string.slice(0, 12)}...`
+  }
 } 
 
 export default StoreList;

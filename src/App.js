@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter} from 'react-router-dom';
 import Home from './pages/home';
+import Detail from './pages/detail';
 import logo from './logo.svg';
 import './App.css';
 
@@ -21,6 +22,7 @@ class App extends Component {
       <BrowserRouter>
           <Switch> {/*只匹配一次*/}
             <Route exact path="/" component={Home}/> {/*路径为/时匹配首页*/}
+            <Route excat path="/detail/:id" component={Detail}/> {/*路径为/时匹配首页*/}
           </Switch>
           </BrowserRouter>
       </div>
