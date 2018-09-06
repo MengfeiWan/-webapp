@@ -1,7 +1,8 @@
 import React from 'react';
 import { Input, Layout } from 'antd';
 import StoreList from './StoreList';
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
+import './home.less';
 
 const Search = Input.Search;
 const { Header, Footer, Sider, Content } = Layout;
