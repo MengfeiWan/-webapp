@@ -72,7 +72,7 @@ class StoreList extends React.Component {
               </div>
               <div className="goods-infor">
                 <p><span className="title">{item.title}</span><span className="distance">{item.distance}</span></p>
-                <p>{this.sliceString(item.subTitle)}</p>
+                <p><span className="description">{this.sliceString(item.subTitle)}</span></p>
                 <p><span className="price">￥{item.price}</span><span className="sold">已售:{item.number}</span></p>
               </div>
             </li>
