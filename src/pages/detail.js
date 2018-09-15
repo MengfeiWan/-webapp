@@ -55,6 +55,9 @@ class Detail extends React.Component {
     super(props);
     this.state = {};
   }
+  componentDidMount () {
+    
+  }
   handleClick = () => {
     window.history.back()
   }
@@ -68,7 +71,7 @@ class Detail extends React.Component {
           <div className="img-container">
             <img src={detail.img} alt="图片" />
           </div>
-          <div>
+          <div className="store-info">
             <h1>{detail.title}</h1>
             <p>￥{detail.price}</p>
             <p>{detail.subTitle}</p>

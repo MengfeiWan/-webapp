@@ -1,6 +1,7 @@
 .commend-list {
   padding: 0 12px;
   li {
+    color: black;
     display: flex;
     padding: 8px 0;
     border-bottom: 1px solid #e0e0e0;
@@ -14,10 +15,16 @@
     }
     
     .goods-infor{
+      display: flex;
+      flex-direction: column ;
+      justify-content: space-between;
+      // align-items:space-between;
       padding-left: 8px;
       flex: 4;
 
       p {
+        display: flex;
+        justify-content: space-between;
         margin: 3px 0;
       }
 
@@ -33,9 +40,9 @@
         color: #fd001f;
       }
 
-      .distance, .sold {
-        float: right;
-      }
+      // .distance, .sold {
+      //   float: right;
+      // }
     }
   }
 }
